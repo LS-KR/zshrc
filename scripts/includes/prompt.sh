@@ -26,20 +26,21 @@ prompt-reset() {
     # New line first
     prompt-set 0 "&n"
     # Time stamp
-    prompt-set 10 "&5%D{%a %m-%d %H:%M}&r "
-    [[ "$host" != "HyDEV" ]] && prompt-set 10 "&gf(#55CDFC)%D{%a} &gf(#F7A8B8)%D{%m-}&f%D{%d} &gf(#F7A8B8)%D{%H:}&gf(#55CDFC)%D{%M}&r "
+    prompt-set 10 "&d╭─ &5%D{%a %m-%d %H:%M}&r "
+    [[ "$host" != "HyDEV" ]] && prompt-set 10 "&d╭─ &gf(#55CDFC)%D{%a} &gf(#F7A8B8)%D{%m-}&f%D{%d} &gf(#F7A8B8)%D{%H:}&gf(#55CDFC)%D{%M}&r "
     # Hostname
     prompt-set 20 "&1$host&r "
     [[ "$host" == "HyDEV" ]] && prompt-set 20 "&gf(#55CDFC)H&gf(#F7A8B8)y&fD&gf(#F7A8B8)E&gf(#55CDFC)V&r "
     # Username, or show a cat if I'm hykilpikonna
-    prompt-set 30 "&e%n&r "
+    prompt-set 30 "&e%n&r &a∞&r "
     [[ "$USER" == "hykilpikonna" || "$USER" == "azalea" ]] && prompt-set 30 "🐱 "
+    [[ "$USER" == "root" ]] && prompt-set 30 "&e%n&r &c✡&r "
     # Directory
-    prompt-set 40 "&r%~ "
+    prompt-set 40 "&f%~ &d───"
     # New line after the prompt header
     prompt-set 1000 "&n"
     # Prompt before input
-    prompt-set 1100 "> "
+    prompt-set 1100 "╰───→ "
     # Create prompt
     prompt-update
 }

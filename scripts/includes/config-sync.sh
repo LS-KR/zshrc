@@ -43,7 +43,7 @@ CFGSYNC="$SCR/../config-sync"
 
 # Sync SSH Config
 alias check-ssh-config="check-config $HOME/.ssh/config $CFGSYNC/ssh-config"
-check-ssh-config
+# check-ssh-config
 
 # Check nanorc includes
 # check-inject "$HOME/.nanorc" "include $SCR/../config-sync/nanorc"

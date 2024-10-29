@@ -236,14 +236,14 @@ for f in "$SCR/includes/later/"*.*sh; do source "$f"; done
 # Set proxy
 setproxy() {
     addr=${1:-127.0.0.1}
-    port=${2:-7890}
+    port=${2:-3389}
     full="$addr:$port"
     export https_proxy="http://$full"
     export http_proxy="http://$full"
     export all_proxy="socks5://$full"
     color "&aUsing proxy! $full&r"
 
-    prompt-set 30 "🌎 "
+    prompt-set 30 "&e%n&r &b🛪&r "
     prompt-update
 }
 
